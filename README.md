@@ -1,1 +1,2 @@
 # FastAPI-with-Kubernetes
+Created a FastAPI application that serves basic CRUD (Create, Read, Update, Delete) operations via HTTP requests. I used MongoDB, a popular NoSQL database, to persist data. Second, I made a Docker image of the FastAPI application by creating a Dockerfile. Finally, wrote two YAML-based manifest files to create necessary resources to deploy the MongoDB database and the FastAPI application to a Kubernetes cluster.
