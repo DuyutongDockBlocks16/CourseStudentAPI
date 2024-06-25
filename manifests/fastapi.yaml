@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fast-api-service
+spec:
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+  selector:
+    app: fast-api-backend
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fast-api-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fast-api-backend
+  template:
+    metadata:
+      labels:
+        app: fast-api-backend
+    spec:
+      containers:
+        - name: fast-api-backend
+           image: fast-api-backend:v1
+           ports:
+              - containerPort: 5000
+
